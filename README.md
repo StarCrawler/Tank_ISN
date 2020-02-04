@@ -2,6 +2,6 @@
 
 04/02/2020 : 
 
--Création du github
--Attribution des taches
--Commencement du jeu
+#-Création du github
+#-Attribution des taches
+#-Commencement du jeu
