@@ -3,11 +3,12 @@ Tank tank1 = new Tank(100,100,#0762eb);
 
 void setup(){
   size(1000,750); 
-  background(0);
+  background(255);
   
 }
 
 void draw(){
+  background(255);
   tank1.display();
   tank1.move();
 }
@@ -55,6 +56,7 @@ class Tank{
     couleur = newCouleur;
   }
   void display() {
+    noStroke();
     fill(couleur);
     rect(x,y,25,25);
   }
