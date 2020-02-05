@@ -13,6 +13,7 @@ void draw(){
   tank1.display();
   tank2.display();
   tank1.move();
+  tank2.move();
 }
 
 void keyPressed(){
@@ -28,6 +29,18 @@ void keyPressed(){
   if(key == 'd'){
     tank1.deplacementX = 1;
   }
+  if(keyCode == UP){
+    tank2.deplacementY = -1;
+  }
+  if(keyCode == DOWN){
+    tank2.deplacementY = 1;
+  }
+  if(keyCode == LEFT){
+    tank2.deplacementX = -1;
+  }
+  if(keyCode == RIGHT){
+    tank2.deplacementX = 1;
+  }
 }
 void keyReleased(){
   if(key == 'z'){
@@ -40,8 +53,19 @@ void keyReleased(){
     tank1.deplacementX = 0;
   }
   if(key == 'd'){
-    tank1.deplacementX = 0 
-    ;
+    tank1.deplacementX = 0;
+  }
+  if(keyCode == UP){
+    tank2.deplacementY = 0;
+  }
+  if(keyCode == DOWN){
+    tank2.deplacementY = 0;
+  }
+  if(keyCode == LEFT){
+    tank2.deplacementX = 0;
+  }
+  if(keyCode == RIGHT){
+    tank2.deplacementX = 0;
   }
 }
 //création de l'objet tank
