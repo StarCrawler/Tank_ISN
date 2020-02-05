@@ -1,4 +1,5 @@
 Tank tank1 = new Tank(100,100,#0762eb);
+Tank tank2 = new Tank(200,200,color(0));
 
 
 void setup(){
@@ -10,6 +11,7 @@ void setup(){
 void draw(){
   background(255);
   tank1.display();
+  tank2.display();
   tank1.move();
 }
 
