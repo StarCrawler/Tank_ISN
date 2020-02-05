@@ -90,4 +90,7 @@ class Tank{
     x = deplacementX + x;
     y = deplacementY + y;
   }
+  /*void collision(otherX,otherY){
+    if(x >= otherX
+  }*/
 }
