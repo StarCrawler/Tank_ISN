@@ -1,4 +1,4 @@
-Etape 1 : Définir map csv et l'afficher/Hugo/ + Définir les tanks (création objet + déplacements)/Riwan/
+Etape 1 : Définir map csv et l'afficher/Hugo/ + Définir les tanks (création objet + déplacements) et leur colisions/Riwan/
 
 Etape 2 : Définir le tir des tanks (second type d'objet + directions du tir)/Riwan/ + Définir placement des tanks sur le csv/Hugo/
 

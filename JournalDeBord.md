@@ -5,3 +5,4 @@
 -Création du github
 -Attribution des taches
 -Commencement du jeu
+-Objet tank crée avec ses fonctions d'affichage et de déplacement
