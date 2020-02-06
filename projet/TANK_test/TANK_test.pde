@@ -12,22 +12,31 @@ void draw(){
   background(255);
   tank1.display();
   tank2.display();
+  //tank1.collision(tank2.x,tank2.y);
   tank1.move();
   tank2.move();
 }
 
 void keyPressed(){
   if(key == 'z'){
-    tank1.deplacementY = -1;
+    if(tank1.collisiond == false){
+      tank1.deplacementY = -1;
+    }
   }
   if(key == 's'){
-    tank1.deplacementY = 1;
+    if(tank1.collisionu == false){
+      tank1.deplacementY = 1;
+    }
   }
   if(key == 'q'){
-    tank1.deplacementX = -1;
+    if(tank1.collisionr == false){
+      tank1.deplacementX = -1;
+    }
   }
   if(key == 'd'){
-    tank1.deplacementX = 1;
+    if(tank1.collisionl == false){
+      tank1.deplacementX = 1;
+    }
   }
   if(keyCode == UP){
     tank2.deplacementY = -1;
@@ -75,6 +84,7 @@ class Tank{
   color couleur;
   int deplacementX;
   int deplacementY;
+  boolean collisionr = false , collisionl = false, collisionu = false , collisiond = false;
   
   Tank (float newX, float newY, color newCouleur){
     x = newX;
@@ -90,7 +100,26 @@ class Tank{
     x = deplacementX + x;
     y = deplacementY + y;
   }
-  /*void collision(otherX,otherY){
-    if(x >= otherX
-  }*/
+  void collision(float otherX,float otherY){
+    if(x+25 >= otherX && y+25 >= otherY  && y <= (otherY +25)){
+      collisionl = true;
+    }else{
+      collisionl = false;
+    }
+    if(y+25 >= otherY && x+25 >= otherX && x <= (otherX+25)){
+      collisionu = true;
+    }else{
+      collisionu = false;
+    }
+    if(y <= otherY+25 && x >= otherX && x <= (otherX+25)){
+      collisiond = true;
+    }else{
+      collisiond = false;
+    }
+    if(x <= otherX+25 && y >= otherY && y <= (otherY+25)){
+      collisionr = true;
+    }else{
+      collisionr = false;
+    }
+  }
 }
