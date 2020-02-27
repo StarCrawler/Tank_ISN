@@ -16,7 +16,7 @@ void draw() {
   background(255,255,255,50);
   counter++;
   translate(width/2-tank.width/2, height/2-tank.height/2);
-  rotate(counter*TWO_PI/288);
+  rotate(counter*TWO_PI/4);
   // rect(-26, -26, 52, 52);
   image(tank, -25, -25);
   save("tnk"+counter+".png");
