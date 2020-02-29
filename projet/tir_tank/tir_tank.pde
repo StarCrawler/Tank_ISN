@@ -1,6 +1,9 @@
 Tank tank1 = new Tank(150, 150, #e81f10);
+
 PImage tir;
 PImage moveL, moveR, moveU, moveD;
+
+
 
 void setup() {
   size(300, 300);
@@ -9,20 +12,21 @@ void setup() {
   moveR = loadImage("sprite/tankR.png");
   moveU = loadImage("sprite/tankU.png");
   moveD = loadImage("sprite/tankD.png");
+  moveL.resize(25, 25);
+  moveR.resize(25, 25);
+  moveU.resize(25, 25);
+  moveD.resize(25, 25);
 }
 
 void draw() {
   background(255);
   tank1.display();
-  moveL.resize(25, 25);
-  moveR.resize(25, 25);
-  moveU.resize(25, 25);
-  moveD.resize(25, 25);
-  image(tir, 50, 50);
 }
 
 void keyPressed() {
-  if (key == #000020) {
+  if (key == 'e') {
+    Tir tir1 = new Tir(100, 100, tir);
+    tir1.display();
   }
   if (key == 'z') {
     tank1.spritep = 1;
@@ -52,23 +56,25 @@ class Tank {
     y = newY;
     couleur = newCouleur;
   }
+
   void display() {
     noStroke();
-    fill(couleur,0);
+    fill(couleur, 0);
     rect(x, y, 25, 25);
     if (spritep == 1) {
-      image(moveU,x,y);
+      image(moveU, x, y);
     }
     if (spritep == 2) {
-      image(moveD,x,y);
+      image(moveD, x, y);
     }
     if (spritep == 3) {
-      image(moveL,x,y);
+      image(moveL, x, y);
     }
     if (spritep == 4) {
-      image(moveR,x,y);
+      image(moveR, x, y);
     }
   }
+
   void move() {
     if (collisionl == false) {
       x = deplacementXr + x;
@@ -83,6 +89,7 @@ class Tank {
       x = deplacementXl + x;
     }
   }
+
   void collision(float otherX, float otherY) {
     if (x+25 >= otherX && y+25 >= otherY  && y <= (otherY +25) && x+24 <= otherX) {
       collisionl = true;
@@ -104,5 +111,20 @@ class Tank {
     } else {
       collisionr = false;
     }
+  }
+}
+
+class Tir {
+  float x;
+  float y;
+  PImage tir;
+  Tir(float newX, float newY, PImage newtir) {
+    x = newX;
+    y = newY;
+    tir = newtir;
+  }
+
+  void display() {
+    image(tir, x, y);
   }
 }
