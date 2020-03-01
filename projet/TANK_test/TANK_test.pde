@@ -1,10 +1,19 @@
 Tank tank1 = new Tank(100, 100, #0762eb);
 Tank tank2 = new Tank(200, 200, color(0));
 
+PImage moveL, moveR, moveU, moveD;
 
 void setup() {
   size(1000, 750); 
   background(255);
+  moveL = loadImage("sprite/tankL.png");
+  moveR = loadImage("sprite/tankR.png");
+  moveU = loadImage("sprite/tankU.png");
+  moveD = loadImage("sprite/tankD.png");
+  moveL.resize(25, 25);
+  moveR.resize(25, 25);
+  moveU.resize(25, 25);
+  moveD.resize(25, 25);
 }
 
 void draw() {
@@ -20,27 +29,35 @@ void draw() {
 void keyPressed() {
   if (key == 'z') {
     tank1.deplacementYu = -1;
+    tank1.spritep = 1;
   }
   if (key == 's') {
     tank1.deplacementYd = 1;
+    tank1.spritep = 2;
   }
   if (key == 'q') {
     tank1.deplacementXl = -1;
+    tank1.spritep = 3;
   }
   if (key == 'd') {
     tank1.deplacementXr = 1;
+    tank1.spritep = 4;
   }
   if (keyCode == UP) {
     tank2.deplacementYu = -1;
+    tank2.spritep = 1;
   }
   if (keyCode == DOWN) {
     tank2.deplacementYd = 1;
+    tank2.spritep = 2;
   }
   if (keyCode == LEFT) {
     tank2.deplacementXl = -1;
+    tank2.spritep = 3;
   }
   if (keyCode == RIGHT) {
     tank2.deplacementXr = 1;
+    tank2.spritep = 4;
   }
 }
 void keyReleased() {
@@ -77,6 +94,7 @@ class Tank {
   int deplacementXr, deplacementXl;
   int deplacementYu, deplacementYd;
   boolean collisionr = false, collisionl = false, collisionu = false, collisiond = false;
+  int spritep = 4;
 
   Tank (float newX, float newY, color newCouleur) {
     x = newX;
@@ -85,8 +103,20 @@ class Tank {
   }
   void display() {
     noStroke();
-    fill(couleur);
+    fill(couleur, 0);
     rect(x, y, 25, 25);
+    if (spritep == 1) {
+      image(moveU, x, y);
+    }
+    if (spritep == 2) {
+      image(moveD, x, y);
+    }
+    if (spritep == 3) {
+      image(moveL, x, y);
+    }
+    if (spritep == 4) {
+      image(moveR, x, y);
+    }
   }
   void move() {
     if (collisionl == false) {
