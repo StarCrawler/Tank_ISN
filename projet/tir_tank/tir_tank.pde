@@ -1,18 +1,27 @@
 PImage tir;
+ArrayList<Tir> bullets = new ArrayList<Tir>();
 
 void setup() {
   size(300, 300);
   tir = loadImage("sprite/tir.png");
+  tir.resize(50,25);
 }
 
 void draw() {
   background(255);
+  for(int i = 0; i < bullets.size()-1; i++){
+    Tir tir = bullets.get(i);
+    tir.display();
+    tir.update();
+    if(tir.terminate()){
+      bullets.remove(i);
+    }
+  }
 }
 
 void keyPressed() {
   if (key == 'e') {
-    Tir tir1 = new Tir(100, 100, tir);
-    tir1.display();
+    bullets.add(new Tir(150, 150, tir));
   }
 }
 
@@ -29,5 +38,16 @@ class Tir {
 
   void display() {
     image(tir, x, y);
+  }
+  
+  void update(){
+    x = x+1;
+  }
+  boolean terminate(){
+    if(x+50 >= 300){
+      return true;
+    }else{
+      return false;
+    }
   }
 }
