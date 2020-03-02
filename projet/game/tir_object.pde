@@ -2,10 +2,12 @@ class Tir {
   float x;
   float y;
   color colour;
-  Tir(float newX, float newY, color newColor) {
+  int orientation;
+  Tir(float newX, float newY, color newColor, int newOrientation) {
     x = newX;
     y = newY;
     colour = newColor;
+    orientation = newOrientation;
   }
 
   void display() {
@@ -15,7 +17,18 @@ class Tir {
   }
   
   void update(){
-    x = x + 1;
+    if(orientation == 1){
+      y = y-1;
+    }
+    if(orientation == 2){
+      y = y+1;
+    }
+    if(orientation == 3){
+      x = x-1;
+    }
+    if(orientation == 4){
+      x = x+1;
+    }
   }
   
   boolean terminate(){
