@@ -13,34 +13,31 @@ class Tir {
   void display() {
     noStroke();
     fill(colour);
-    ellipse(x,y,10,10);
+    ellipse(x, y, 10, 10);
   }
-  
-  void update(){
-    if(orientation == 1){
-      y = y-1;
+
+  void update() {
+    if (orientation == 1) {
+      y = y-3;
     }
-    if(orientation == 2){
-      y = y+1;
+    if (orientation == 2) {
+      y = y+3;
     }
-    if(orientation == 3){
-      x = x-1;
+    if (orientation == 3) {
+      x = x-3;
     }
-    if(orientation == 4){
-      x = x+1;
+    if (orientation == 4) {
+      x = x+3;
     }
   }
-  
-  boolean terminate(){
-    if(x+10 >= 1000){
+
+  boolean terminate(float Xtank1, float Ytank1/*, float Xtank2, float Ytank2*/) {
+    if (x+10 >= 1000 || x-10 <= 0 || y+10 >= 750 || y-10 <= 0) {
       return true;
-    }else if(x-10 <= 0){
+    }
+    if (x+10 >= Xtank1 && (y-10 >= Ytank1 || y+10 <= Ytank1+25)) {
       return true;
-    }else if(y+10 >= 750){
-      return true;
-    }else if(y-10 <= 0){
-      return true;
-    }else{
+    }else {
       return false;
     }
   }

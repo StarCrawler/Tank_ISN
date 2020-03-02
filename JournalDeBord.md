@@ -19,4 +19,5 @@
 
 02/03/2020 :
 
--objet bullet crée 
+-ajout de l'orientation du tir
+-début de collision de l'objet avec les tanks

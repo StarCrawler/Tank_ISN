@@ -17,7 +17,7 @@ void draw() {
     Tir tir = bullets.get(i);
     tir.display();
     tir.update();
-    if (tir.terminate()) {
+    if (tir.terminate(tank1.x,tank1.y)) {
       bullets.remove(i);
     }
   }
