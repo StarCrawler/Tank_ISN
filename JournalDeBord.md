@@ -21,3 +21,9 @@
 
 -ajout de l'orientation du tir
 -début de collision de l'objet avec les tanks
+
+03/03/2020 :
+
+-système de tir finis
+-début de la création des murs
+-première map crée
