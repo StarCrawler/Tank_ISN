@@ -1,7 +1,7 @@
 Table tableau;
 int hauteur=32;
 int largeur=23;
-PImage img[]=new PImage[2];
+PImage img[]=new PImage[14];
 int niveau[][]=new int[largeur][hauteur];
 int x,y,numeroImage;
 
@@ -11,6 +11,9 @@ int x,y,numeroImage;
 void setup() {
   img[0] = loadImage("00.png");
   img[1] = loadImage("01.png");
+  img[11] = loadImage("11.png");
+  img[12] = loadImage("12.png");
+  img[13] = loadImage("13.png");
   
   size(1024, 736);
   background(255);
