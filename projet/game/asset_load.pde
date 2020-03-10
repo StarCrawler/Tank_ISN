@@ -1,3 +1,5 @@
+PImage moveL, moveR, moveU, moveD, tir; // variable des sprites du jeu
+
 void asset_load(){
   tir = loadImage("sprite/tir.png");
   moveL = loadImage("sprite/tankL.png");

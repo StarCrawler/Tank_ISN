@@ -1,10 +1,10 @@
 Tank tank1 = new Tank(100, 100, #0762eb); // création du tank du premier joueur
 Tank tank2 = new Tank(200, 200, color(0)); // création du tank du deuxième joueur
+Mur mur1 = new Mur(400,400, color(0));
 ArrayList<Tir> bullets1 = new ArrayList<Tir>(); // création du tableau modulaire des balles du joueur 1
 ArrayList<Tir> bullets2 = new ArrayList<Tir>(); // création du tableau modulaire des balles du joueur 2
 int orientation1 = 4; // variable indiquant l'orientation du tank
 int orientation2 = 4;
-PImage moveL, moveR, moveU, moveD, tir; // variable des sprites du jeu
 
 void setup() {
   size(1000, 750); 
@@ -20,20 +20,22 @@ void draw() {
     tir.display(); // affichage des balles
     tir.update(); // maj de leur position
     // verification de la position des balles pour détecter d'éventuelles collisions
-    if (tir.terminate(tank2.x,tank2.y)) {
+    if (tir.terminate(tank2.x,tank2.y) || mur1.collisionTir(tir.x,tir.y)) {
       bullets1.remove(i);
     }
   }
   for (int i = 0; i < bullets2.size(); i++){
     Tir tir = bullets2.get(i);
     tir.display();
+    mur1.collisionTir(tir.x,tir.y);
     tir.update();
-    if(tir.terminate(tank1.x,tank1.y)){
+    if(tir.terminate(tank1.x,tank1.y) ||mur1.collisionTir(tir.x,tir.y)){
       bullets2.remove(i);
     }
   }
   tank1.display(); // affichage des tanks 
   tank2.display();
+  mur1.display();
   tank1.collision(tank2.x, tank2.y); // détection des collisions entre les deux tanks
   tank2.collision(tank1.x, tank1.y);
   tank1.move(); // déplacement des tanks
@@ -63,7 +65,7 @@ void keyPressed() {
     tank1.spritep = 4;
   }
   if (key == 'e') {
-    bullets1.add(new Tir(tank1.x+12, tank1.y+12, color(0), orientation1)); //création d'une nouvelle balle à chaque appui sur la touche tir
+    bullets1.add(new Tir(tank1.x+tank1.taille/2, tank1.y+tank1.taille/2, color(0), orientation1)); //création d'une nouvelle balle à chaque appui sur la touche tir
   }
   if (keyCode == UP) {
     tank2.deplacementYu = -1;
@@ -86,7 +88,7 @@ void keyPressed() {
     orientation2 = 4;
   }
   if (keyCode == ENTER) {
-    bullets2.add(new Tir(tank2.x+12,tank2.y+12,color(0),orientation2));
+    bullets2.add(new Tir(tank2.x+tank2.taille/2,tank2.y+tank2.taille/2,color(0),orientation2));
   }
 }
 
