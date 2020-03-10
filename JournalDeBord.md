@@ -27,3 +27,9 @@
 -système de tir finis
 -début de la création des murs
 -première map crée
+
+10/03/2020 :
+
+-début de la création de l'éditeur de map en créant des boutons
+-ajout des collision des tirs avec les murs 
+-début de réflexion des collisions des tanks avec les murs
