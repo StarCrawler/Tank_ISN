@@ -29,7 +29,7 @@ void draw() {
     tir.display();
     mur1.collisionTir(tir.x,tir.y);
     tir.update();
-    if(tir.terminate(tank1.x,tank1.y) ||mur1.collisionTir(tir.x,tir.y)){
+    if(tir.terminate(tank1.x,tank1.y) || mur1.collisionTir(tir.x,tir.y)){
       bullets2.remove(i);
     }
   }
@@ -40,6 +40,9 @@ void draw() {
   tank2.collision(tank1.x, tank1.y);
   tank1.move(); // déplacement des tanks
   tank2.move();
+  mur1.collisionTank(tank1.x, tank1.y, tank1.collisionl, tank1.collisionu, tank1.collisiond, tank1.collisionr);
+  mur1.collisionTank(tank2.x, tank2.y, tank2.collisionl, tank2.collisionu, tank2.collisiond, tank2.collisionr);
+  
 }
 
 //détection de la pression des touuches
