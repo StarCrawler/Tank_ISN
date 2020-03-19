@@ -36,13 +36,10 @@ void draw() {
   tank1.display(); // affichage des tanks 
   tank2.display();
   mur1.display();
-  tank1.collision(tank2.x, tank2.y); // détection des collisions entre les deux tanks
-  tank2.collision(tank1.x, tank1.y);
+  tank1.collision(tank2.x, tank2.y, mur1.x, mur1.y); // détection des collisions entre les deux tanks
+  tank2.collision(tank1.x, tank1.y, mur1.x, mur1.y);
   tank1.move(); // déplacement des tanks
   tank2.move();
-  mur1.collisionTank(tank1.x, tank1.y, tank1.collisionl, tank1.collisionu, tank1.collisiond, tank1.collisionr);
-  mur1.collisionTank(tank2.x, tank2.y, tank2.collisionl, tank2.collisionu, tank2.collisiond, tank2.collisionr);
-  
 }
 
 //détection de la pression des touuches
