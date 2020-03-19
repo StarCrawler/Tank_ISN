@@ -33,3 +33,12 @@
 -début de la création de l'éditeur de map en créant des boutons
 -ajout des collision des tirs avec les murs 
 -début de réflexion des collisions des tanks avec les murs
+
+17/03/2020 :
+
+-écriture des équations de collisions des murs mais bugs lors du lancement
+
+19/03/2020 :
+
+-fix des collisions des murs
+-jeu prêt pour l'intégration des maps
