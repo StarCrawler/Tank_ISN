@@ -35,8 +35,8 @@ class Tir {
     if (x+10 >= 1000 || x-10 <= 0 || y+10 >= 750 || y-10 <= 0) {
       return true;
     }
-    if ((x+10 >= Xtank && y-10 >= Ytank-20 && y+10 <= Ytank+45 && x+10 <= Xtank+3) || (x-10 <= Xtank+25 && y-10 >= Ytank-20 && y+10 <= Ytank+45 && x-10 >= Xtank+22) ||
-    (y+10 >= Ytank && x-10 >= Xtank-20 && x+10 <= Xtank+45 && y+10 <= Ytank+3) || (y-10 <= Ytank+25 && x-10 >= Xtank -20 && x+10 <= Xtank+45 && y-10 >= Ytank+22)) {
+    if ((x+10 >= Xtank && y-10 >= Ytank-20 && y+10 <= Ytank+52 && x+10 <= Xtank+3) || (x-10 <= Xtank+32 && y-10 >= Ytank-20 && y+10 <= Ytank+52 && x-10 >= Xtank+49) ||
+    (y+10 >= Ytank && x-10 >= Xtank-20 && x+10 <= Xtank+52 && y+10 <= Ytank+3) || (y-10 <= Ytank+32 && x-10 >= Xtank -20 && x+10 <= Xtank+52 && y-10 >= Ytank+49)) {
       return true;
     }else {
       return false;

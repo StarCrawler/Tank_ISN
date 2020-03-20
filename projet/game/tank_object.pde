@@ -18,16 +18,16 @@ class Tank {
     fill(couleur, 0);
     rect(x, y, 25, 25);
     if (spritep == 1) {
-      image(moveU, x, y);
+      image(moveU, x-1, y-1);
     }
     if (spritep == 2) {
-      image(moveD, x, y);
+      image(moveD, x-1, y-1);
     }
     if (spritep == 3) {
-      image(moveL, x, y);
+      image(moveL, x-1, y-1);
     }
     if (spritep == 4) {
-      image(moveR, x, y);
+      image(moveR, x-1, y-1);
     }
   }
   void move() {
@@ -68,16 +68,16 @@ class Tank {
     
   }
   void collisionMur(float murX, float murY) {
-    if (murY+32 >= y && murY+32 <= y+1 && x+32 >= murX && x <= murX+32) {
+    if (murY+33 == y && x+32 >= murX && x <= murX+32) {
       collisiond = true;
     }
-    if (murY >= y+31 && murY <= y+32 && x+32 >= murX && x <= murX+32) {
+    if (murY == y+33 && x+32 >= murX && x <= murX+32) {
       collisionu = true;
     }
-    if (murX+32 >= x && murX+32 <= x+1 && y+32 >= murY && y <= murY+32) {
+    if (murX+33 == x && y+32 >= murY && y <= murY+32) {
       collisionr = true;
     }
-    if (murX >= x+31 && murX <= x+32 && y+32 >= murY && y <= murY+32) {
+    if (murX == x+33 && y+32 >= murY && y <= murY+32) {
       collisionl = true;
     }
   }

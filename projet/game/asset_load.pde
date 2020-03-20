@@ -6,8 +6,8 @@ void asset_load(){
   moveR = loadImage("sprite/tankR.png");
   moveU = loadImage("sprite/tankU.png");
   moveD = loadImage("sprite/tankD.png");
-  moveL.resize(32, 32);
-  moveR.resize(32, 32);
-  moveU.resize(32, 32);
-  moveD.resize(32, 32);
+  moveL.resize(34, 34);
+  moveR.resize(34, 34);
+  moveU.resize(34, 34);
+  moveD.resize(34, 34);
 }
