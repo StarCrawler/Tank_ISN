@@ -21,5 +21,5 @@ class Mur {
     } else {
       return false;
     }
-  } 
+  }
 }

@@ -64,8 +64,7 @@ class Tank {
       collisionr = true;
     } else {
       collisionr = false;
-    } 
-    
+    }
   }
   void collisionMur(float murX, float murY) {
     if (murY+33 == y && x+32 >= murX && x <= murX+32) {

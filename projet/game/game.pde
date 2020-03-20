@@ -18,14 +18,13 @@ void setup() {
   for ( int i = 3; i < largeur; i++) {
     for ( int j = 0; j < hauteur; j++) {
       if (map1[i][j] == 1 || map1 [i][j] == 13) {
-        mur1.add(new Mur(posX, posY, color(255,0)));
+        mur1.add(new Mur(posX, posY, color(255, 0)));
       }
       posX = posX + 32;
     }
     posY = posY + 32;
     posX = 0;
   }
-
 }
 
 void draw() {
@@ -127,8 +126,11 @@ void keyPressed() {
     orientation2 = 4;
   }
   if (keyCode == ENTER) {
-
-    bullets2.add(new Tir(tank2.x+tank2.taille/2, tank2.y+tank2.taille/2, color(0), orientation2));
+    long nowpress = millis();
+    if (nowpress > (lastpress2 + cooldown)) {
+      bullets2.add(new Tir(tank2.x+tank2.taille/2, tank2.y+tank2.taille/2, color(0), orientation2));
+      lastpress2 = nowpress;
+    }
   }
 }
 
