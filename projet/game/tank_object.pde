@@ -44,7 +44,7 @@ class Tank {
       x = deplacementXl + x;
     }
   }
-  void collision(float otherX, float otherY, float murX, float murY) {
+  void collision(float otherX, float otherY) {
     if (x+taille >= otherX && y+taille >= otherY  && y <= (otherY +taille) && x+taille-1 <= otherX) {
       collisionl = true;
     } else {
@@ -65,6 +65,9 @@ class Tank {
     } else {
       collisionr = false;
     } 
+    
+  }
+  void collisionMur(float murX, float murY) {
     if (murY+32 >= y && murY+32 <= y+1 && x+32 >= murX && x <= murX+32) {
       collisiond = true;
     }

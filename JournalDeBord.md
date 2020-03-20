@@ -42,3 +42,7 @@
 
 -fix des collisions des murs
 -jeu prêt pour l'intégration des maps
+
+20/03/2020 :
+
+-mise en place d'un générateur de collision s'adaptant a différentes possibilité de maps
