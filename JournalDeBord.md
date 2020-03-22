@@ -48,3 +48,7 @@
 -mise en place d'un générateur de collision s'adaptant a différentes possibilité de maps
 -test d'intégration de map réussi
 -cooldown des tirs ajouté
+
+22/03/2020 :
+
+-code de l'alpha entièrement commenté

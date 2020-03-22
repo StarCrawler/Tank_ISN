@@ -2,21 +2,16 @@ class Tank {
   float x;
   float y;
   int taille = 32;
-  color couleur;
   int deplacementXr, deplacementXl;
   int deplacementYu, deplacementYd;
   boolean collisionr = false, collisionl = false, collisionu = false, collisiond = false;
   int spritep = 4;
 
-  Tank (float newX, float newY, color newCouleur) {
+  Tank (float newX, float newY) { //contructeur du tank
     x = newX;
     y = newY;
-    couleur = newCouleur;
   }
-  void display() {
-    noStroke();
-    fill(couleur, 0);
-    rect(x, y, 25, 25);
+  void display() { // affichage du tank en fonction de son orientation
     if (spritep == 1) {
       image(moveU, x-1, y-1);
     }
@@ -30,7 +25,7 @@ class Tank {
       image(moveR, x-1, y-1);
     }
   }
-  void move() {
+  void move() { //déplacement du tank
     if (collisionl == false) {
       x = deplacementXr + x;
     }
@@ -44,7 +39,7 @@ class Tank {
       x = deplacementXl + x;
     }
   }
-  void collision(float otherX, float otherY) {
+  void collision(float otherX, float otherY) { //collision du tank avec l'autre tank
     if (x+taille >= otherX && y+taille >= otherY  && y <= (otherY +taille) && x+taille-1 <= otherX) {
       collisionl = true;
     } else {
@@ -66,7 +61,7 @@ class Tank {
       collisionr = false;
     }
   }
-  void collisionMur(float murX, float murY) {
+  void collisionMur(float murX, float murY) { //collision du tank avec les murs
     if (murY+33 == y && x+32 >= murX && x <= murX+32) {
       collisiond = true;
     }

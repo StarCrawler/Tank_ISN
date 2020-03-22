@@ -32,6 +32,5 @@ void traceMap1() {
       numeroDessin=map1[y][x];
       image(img[numeroDessin], x*32, y*32);
     }
-    println();
   }
 }

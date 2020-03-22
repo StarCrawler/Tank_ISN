@@ -1,11 +1,14 @@
 PImage moveL, moveR, moveU, moveD, tir; // variable des sprites du jeu
 
 void asset_load() {
+  //chargement des sprites
   tir = loadImage("sprite/tir.png");
   moveL = loadImage("sprite/tankL.png");
   moveR = loadImage("sprite/tankR.png");
   moveU = loadImage("sprite/tankU.png");
   moveD = loadImage("sprite/tankD.png");
+  //redimmensionnement des sprites
+  tir.resize(10, 10);
   moveL.resize(34, 34);
   moveR.resize(34, 34);
   moveU.resize(34, 34);
