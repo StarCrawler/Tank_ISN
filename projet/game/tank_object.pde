@@ -1,6 +1,7 @@
 class Tank {
   float x;
   float y;
+  int life = 3;
   int taille = 32;
   int deplacementXr, deplacementXl;
   int deplacementYu, deplacementYd;

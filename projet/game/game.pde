@@ -39,6 +39,8 @@ void draw() {
     tir.update(); // maj de leur position
     if (tir.terminate(tank2.x, tank2.y)) {
       bullets1.remove(i); //destruction de l'objet balle quand contact avec tank ennemis
+      tank2.life --;
+      print(tank2.life);
     }
     for (int j = 0; j < mur1.size(); j++) {
       Mur mur = mur1.get(j);
@@ -54,6 +56,8 @@ void draw() {
     tir.update();
     if (tir.terminate(tank1.x, tank1.y)) {
       bullets2.remove(i);
+      tank1.life --;
+      print(tank1.life);
     }
     for (int j = 0; j < mur1.size(); j++) {
       Mur mur = mur1.get(j);
