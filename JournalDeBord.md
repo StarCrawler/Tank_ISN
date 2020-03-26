@@ -57,3 +57,8 @@
 
 -début de la création des boutons
 -fix de bugs
+
+27/03/2020 :
+
+-fix bug tir
+-implémentation d'un système de menu
