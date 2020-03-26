@@ -1,9 +1,4 @@
-Table tableau;
-int hauteur=32;
-int largeur=23;
-PImage img[]=new PImage[14];
-int map1[][]=new int[largeur][hauteur];
-int x, y, numeroImage;
+
 
 
 

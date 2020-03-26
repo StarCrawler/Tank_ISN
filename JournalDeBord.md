@@ -52,3 +52,8 @@
 22/03/2020 :
 
 -code de l'alpha entièrement commenté
+
+24/03/2020 :
+
+-début de la création des boutons
+-fix de bugs
