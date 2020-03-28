@@ -41,22 +41,22 @@ class Tank {
     }
   }
   void collision(float otherX, float otherY) { //collision du tank avec l'autre tank
-    if (x+taille >= otherX && y+taille >= otherY  && y <= (otherY +taille) && x+taille-1 <= otherX) {
+    if (x+taille >= otherX && y+taille >= otherY+1  && y <= (otherY +taille-1) && x+taille-1 <= otherX) {
       collisionl = true;
     } else {
       collisionl = false;
     }
-    if (y+taille >= otherY && x+taille >= otherX && x <= (otherX+taille) && y+taille-1 <= otherY) {
+    if (y+taille >= otherY && x+taille >= otherX+1 && x <= (otherX+taille-1) && y+taille-1 <= otherY) {
       collisionu = true;
     } else {
       collisionu = false;
     }
-    if (y <= otherY+taille && x+taille >= otherX && x <= (otherX+taille) && y+1 >= otherY+taille) {
+    if (y <= otherY+taille && x+taille >= otherX+1 && x <= (otherX+taille-1) && y+1 >= otherY+taille) {
       collisiond = true;
     } else {
       collisiond = false;
     }
-    if (x <= otherX+taille && y+taille >= otherY && y <= (otherY+taille) && x+1 >= otherX+taille) {
+    if (x <= otherX+taille && y+taille >= otherY+1 && y <= (otherY+taille-1) && x+1 >= otherX+taille) {
       collisionr = true;
     } else {
       collisionr = false;

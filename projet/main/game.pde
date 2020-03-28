@@ -1,5 +1,3 @@
-
-
 void starting_game() {
   asset_load(); // chargement des assets du jeu
   map1(); // création de la liste contenant les informations de sprite 
