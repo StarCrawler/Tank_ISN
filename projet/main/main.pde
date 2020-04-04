@@ -1,6 +1,7 @@
 void setup() {
   size(1000, 750); 
   starting_game();
+  startTimer();
 }
 
 void draw() {
@@ -9,7 +10,6 @@ void draw() {
 
     break;
   case 1:
-
     play();
     break;
   }
