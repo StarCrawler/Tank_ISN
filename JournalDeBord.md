@@ -62,3 +62,8 @@
 
 -fix bug tir
 -implémentation d'un système de menu
+
+04/04/2020 :
+
+-implémentation timer
+-début commentaire csv
