@@ -17,6 +17,7 @@ void starting_game() {
 
 void play() {
   traceMap1(); // affichage des sprites de la map
+    timer();
   // verification des tableaux des balles
   for (int i = 0; i < bullets1.size(); i++) {
     Tir tir = bullets1.get(i);
@@ -63,4 +64,5 @@ void play() {
   }
   tank1.move(); // déplacement des tanks
   tank2.move();
+
 }
