@@ -4,8 +4,8 @@ int min, sec;
 
 void startTimer(){
   time = millis();
-  min = 0;
-  sec = 5;
+  min = 3;
+  sec = 0;
 }
 
 void timer(){
@@ -20,11 +20,11 @@ void timer(){
     }
 
     if(sec == 0 && min == 0){
-      println("Plus de temps");
+      text("Plus de temps",512,367);
       stop();
     }
   }
-      println(min,":",sec);
-      println(time);
-      println(millis());
+      textAlign(CENTER);
+      fill(0);
+      text(str(min)+":"+str(sec),512,10);
 }

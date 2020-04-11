@@ -67,3 +67,8 @@
 
 -implémentation timer
 -début commentaire csv
+
+11/04/2020 :
+
+-timer affiché en jeu 
+-animation de sélection du sprite éditeur de map 

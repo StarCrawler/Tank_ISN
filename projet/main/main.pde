@@ -1,5 +1,5 @@
 void setup() {
-  size(1000, 750); 
+  size(1024, 734); 
   starting_game();
   startTimer();
 }
