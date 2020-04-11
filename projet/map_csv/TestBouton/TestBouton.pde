@@ -3,7 +3,16 @@ ArrayList<PImage> sprite = new ArrayList<PImage>();
 float posX = 792;
 float posY = 10;
 int image = 0;
+int state = 0;
 ArrayList<Bouton> btn1 = new ArrayList<Bouton>();
+Bouton limite;
+Bouton vide;
+Bouton pierre;
+Bouton pierresable;
+Bouton herbe1;
+Bouton herbe2;
+Bouton sable1;
+Bouton sable2;
 
 void setup() {
 
@@ -20,16 +29,16 @@ void setup() {
   Sable2 = loadImage("data/22.png");
   Herbe1 = loadImage("data/11.png");
   Herbe2 = loadImage("data/12.png");
-  
-  Limite.resize(48,48);
-  Vide.resize(48,48);
-  Pierre.resize(48,48);
-  PierreSable.resize(48,48);
-  Sable1.resize(48,48);
-  Sable2.resize(48,48);
-  Herbe1.resize(48,48);
-  Herbe2.resize(48,48);
-  
+
+  Limite.resize(48, 48);
+  Vide.resize(48, 48);
+  Pierre.resize(48, 48);
+  PierreSable.resize(48, 48);
+  Sable1.resize(48, 48);
+  Sable2.resize(48, 48);
+  Herbe1.resize(48, 48);
+  Herbe2.resize(48, 48);
+
   sprite.add(Limite);
   sprite.add(Vide);
   sprite.add(Pierre);
@@ -39,23 +48,34 @@ void setup() {
   sprite.add(Herbe1);
   sprite.add(Herbe2);
 
-  for ( int i = 0; i < 2; i++) {
-    for ( int j = 0; j<4; j++) {
-      btn1.add(new Bouton(posX, posY, 48, 48, sprite.get(image)));
-      posX = posX + 58;
-      image++;
-    }
-    posY = posY + 58;
-    posX = 792;
+  limite = new Bouton(posX, posY, 48, 48, Limite);
+  vide = new Bouton(posX+58, posY, 48, 48, Vide);
+  pierre = new Bouton(posX+116, posY, 48, 48, Pierre);
+  pierresable = new Bouton(posX+174, posY, 48, 48, PierreSable);
+  herbe1 = new Bouton(posX, posY+58, 48, 48, Herbe1);
+  herbe2 = new Bouton(posX+58, posY+58, 48, 48, Herbe2);
+  sable1 = new Bouton(posX+116, posY+58, 48, 48, Sable1);
+  sable2 = new Bouton(posX+174, posY+58, 48, 48, Sable2);
+}
+void draw() {
+  background(255);
+  
+  limite.display();
+  vide.display();
+  pierre.display();
+  pierresable.display();
+  herbe1.display();
+  herbe2.display();
+  sable1.display();
+  sable2.display();
+  if (mousePressed) {
+    limite.collisions();
+    vide.collisions();
+    pierre.collisions();
+    pierresable.collisions();
+    herbe1.collisions();
+    herbe2.collisions();
+    sable1.collisions();
+    sable2.collisions();
   }
 }
-
-void draw() {
-  for (int i = 0; i < btn1.size(); i++) {
-    Bouton bouton1 = btn1.get(i);
-    if (mousePressed) {
-      bouton1.collisions();
-    }
-    bouton1.display();
-  }
-} 
