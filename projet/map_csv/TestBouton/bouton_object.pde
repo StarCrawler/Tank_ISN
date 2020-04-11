@@ -2,6 +2,7 @@ class Bouton {
   float x, y;
   int sizeX, sizeY;
   PImage image;
+  boolean clic = false;
 
   Bouton(float newX, float newY, int newSizeX, int newSizeY, PImage newImage) {
     x = newX;
@@ -12,12 +13,20 @@ class Bouton {
   }
 
   void display() {
-    rect(x, y, sizeX, sizeY);
-    image(image,x,y);
+    image(image, x, y);
   }
-  void collisions() {
+  void collisions(int h) {
     if (mouseX>x && mouseX <x+sizeX && mouseY>y && mouseY <y+sizeY) {
-      fill(0);
+      for (int i = 0; i < btn1.size(); i++) {
+        if (i != h) {
+          Bouton bouton = btn1.get(i);
+          if (bouton.clic) {
+            bouton.clic = false;
+          }
+        }
+      }
+    clic = true;
+    state = 0;
     }
   }
 }

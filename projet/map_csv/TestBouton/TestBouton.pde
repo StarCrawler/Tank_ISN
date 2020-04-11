@@ -3,12 +3,13 @@ ArrayList<PImage> sprite = new ArrayList<PImage>();
 float posX = 792;
 float posY = 10;
 int image = 0;
+int state = 0;
 ArrayList<Bouton> btn1 = new ArrayList<Bouton>();
 
 void setup() {
 
   size(1024, 736);
-  background(0);
+  background(255);
   stroke(0);
   noFill();
 
@@ -53,9 +54,19 @@ void setup() {
 void draw() {
   for (int i = 0; i < btn1.size(); i++) {
     Bouton bouton1 = btn1.get(i);
-    if (mousePressed) {
-      bouton1.collisions();
+    while(state == 1){
+      bouton1.collisions(i);
+      if(bouton1.clic){
+        tint(180);
+      }else{
+        tint(255);
+      }
     }
+    
     bouton1.display();
   }
 } 
+
+void mouseClicked(){
+  state = 1;
+}
