@@ -1,6 +1,6 @@
 //variable game
-Tank tank1 = new Tank(65, 257); // création du tank du premier joueur
-Tank tank2 = new Tank(200, 200); // création du tank du deuxième joueur
+Tank tank1 = new Tank(65, 257,10,10); // création du tank du premier joueur
+Tank tank2 = new Tank(200, 200,914,10); // création du tank du deuxième joueur
 
 ArrayList<Mur> mur1 = new ArrayList<Mur>(); // création du tableau modulaire des murs
 
@@ -18,7 +18,7 @@ long lastpress1, lastpress2; // variables de sauvegarde du temps pour le systèm
 int cooldown = 1500; // variable d'attente entre chaque tir
 
 //variable asset_load
-PImage moveL, moveR, moveU, moveD, tir; // variable des sprites du jeu
+PImage moveL, moveR, moveU, moveD, tir, lifeFull; // variable des sprites du jeu
 
 //variable map
 Table tableau;

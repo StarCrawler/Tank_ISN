@@ -72,3 +72,9 @@
 
 -timer affiché en jeu 
 -animation de sélection du sprite éditeur de map 
+
+15/04/2020 :
+
+-ajout de l'affichage des point de vie
+-ajout des écrans de fin de partie
+-avancement de l'éditeur de niveau en ajoutant un quadrillage

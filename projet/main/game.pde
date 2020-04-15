@@ -64,5 +64,23 @@ void play() {
   }
   tank1.move(); // déplacement des tanks
   tank2.move();
+  if(tank1.life == 0 && tank2.life == 0){
+    state = 3;
+  }else if(tank1.life == 0 || tank2.life == 0){
+    state = 2;
+  }
+}
 
+void endGame(){
+  background(255);
+  if(tank1.life == 0){
+    text("Félicitation joueur 2, tu as gagné",512,367);
+  }else{
+    text("Félicitation joueur 1, tu as gagné",512,367);
+  }
+}
+
+void endGameEqual(){
+  background(255);
+  text("Match Nul", 512, 367);
 }

@@ -12,5 +12,11 @@ void draw() {
   case 1:
     play();
     break;
+  case 2:
+    endGame();
+    break;
+  case 3:
+    endGameEqual();
+    break;
   }
 }

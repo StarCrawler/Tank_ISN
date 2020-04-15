@@ -1,6 +1,9 @@
 class Tank {
   float x;
   float y;
+  int posXLife;
+  int posYLife;
+  int startPosX;
   int life = 3;
   int taille = 32;
   int deplacementXr, deplacementXl;
@@ -8,9 +11,12 @@ class Tank {
   boolean collisionr = false, collisionl = false, collisionu = false, collisiond = false;
   int spritep = 4;
 
-  Tank (float newX, float newY) { //contructeur du tank
+  Tank (float newX, float newY, int newPosXLife, int newPosYLife) { //contructeur du tank
     x = newX;
     y = newY;
+    posXLife = newPosXLife;
+    startPosX = newPosXLife;
+    posYLife = newPosYLife;
   }
   void display() { // affichage du tank en fonction de son orientation
     if (spritep == 1) {
@@ -25,6 +31,11 @@ class Tank {
     if (spritep == 4) {
       image(moveR, x-1, y-1);
     }
+    for(int i = 0; i < life; i++){
+      image(lifeFull, posXLife, posYLife);
+      posXLife += 34;
+    }
+    posXLife = startPosX;
   }
   void move() { //déplacement du tank
     if (collisionl == false) {
