@@ -12,7 +12,7 @@ void map1() {
 
   tableau=loadTable("data/Map1.csv", "header");
 
-  for (y=3; y<largeur; y++) {    
+  for (y=0; y<largeur; y++) {    
     for (x=0; x<hauteur; x++) {     
       numeroImage = tableau.getInt(y, x);
       map1[y][x]=numeroImage;
@@ -25,7 +25,12 @@ void traceMap1() {
   for (y=0; y<largeur; y++) {    
     for (x=0; x<hauteur; x++) {
       numeroDessin=map1[y][x];
-      image(img[numeroDessin], x*32, y*32);
+      image(img[numeroDessin], mapX, mapY);
+      mapX += 32;
     }
+    mapX = 0;
+    mapY += 32;
   }
+  mapY = 3*32;
+  mapX = 0;
 }

@@ -16,6 +16,7 @@ void starting_game() {
 }
 
 void play() {
+  background(255);
   traceMap1(); // affichage des sprites de la map
     timer();
   // verification des tableaux des balles

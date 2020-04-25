@@ -78,3 +78,14 @@
 -ajout de l'affichage des point de vie
 -ajout des écrans de fin de partie
 -avancement de l'éditeur de niveau en ajoutant un quadrillage
+
+22/04/2020 :
+
+-sélection sur la grille
+
+
+26/04/2020 :
+
+-enregistrement de la map csv finissant l'éditeur de map
+-résolution de futur problème en lien avec l'éditeur de map
+-création de nouveau sprite pour les tanks

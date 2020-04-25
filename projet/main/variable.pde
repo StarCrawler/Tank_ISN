@@ -23,10 +23,13 @@ PImage moveL, moveR, moveU, moveD, tir, lifeFull; // variable des sprites du jeu
 //variable map
 Table tableau;
 int hauteur=32;
-int largeur=23;
+int largeur=20;
 PImage img[]=new PImage[14];
 int map1[][]=new int[largeur][hauteur];
 int x, y, numeroImage;
+int mapX = 0;
+int mapY = 3*32;
+
 
 //variable main
 
