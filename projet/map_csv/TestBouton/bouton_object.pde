@@ -16,10 +16,10 @@ class Bouton {
     image(image, x, y);
     if(clic){
       strokeWeight(4);
-      line(x,y,x+48,y);
-      line(x+48,y,x+48,y+48);
-      line(x+48,y+48,x,y+48);
-      line(x,y+48,x,y);
+      line(x,y,x+sizeX,y);
+      line(x+sizeX,y,x+sizeX,y+sizeY);
+      line(x+sizeX,y+sizeY,x,y+sizeY);
+      line(x,y+sizeY,x,y);
       strokeWeight(0);
     }
   }
