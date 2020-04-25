@@ -1,18 +1,16 @@
-PImage Limite, Vide, Pierre, PierreSable, Herbe1, Herbe2, Sable1, Sable2;
-ArrayList<PImage> sprite = new ArrayList<PImage>();
-float posX = 792;
+float posX = 560;
 float posY = 10;
-int image = 0;
-int state = 0;
-ArrayList<Bouton> btn1 = new ArrayList<Bouton>();
-Bouton limite;
-Bouton vide;
-Bouton pierre;
-Bouton pierresable;
-Bouton herbe1;
-Bouton herbe2;
-Bouton sable1;
-Bouton sable2;
+float lineX = 0;
+float lineY = 96;
+Bouton btn1[] = new Bouton[8];
+
+PImage img[]=new PImage[8];
+PImage aff[]= new PImage[8];
+int x, y;
+int select = 8;
+int colonnes = 32;
+int lignes = 23;
+int image[][] = new int[colonnes][lignes];
 
 void setup() {
 
@@ -21,61 +19,106 @@ void setup() {
   stroke(0);
   noFill();
 
-  Limite = loadImage("data/01.png");
-  Vide = loadImage("data/00.png");
-  Pierre = loadImage("data/13.png");
-  PierreSable = loadImage("data/23.png");
-  Sable1 = loadImage("data/21.png");
-  Sable2 = loadImage("data/22.png");
-  Herbe1 = loadImage("data/11.png");
-  Herbe2 = loadImage("data/12.png");
+  for (int i = 0; i < colonnes; i++) {
+    for (int j = 0; j < lignes; j++) {
+      image[i][j] = 1;
+    }
+  }
 
-  Limite.resize(48, 48);
-  Vide.resize(48, 48);
-  Pierre.resize(48, 48);
-  PierreSable.resize(48, 48);
-  Sable1.resize(48, 48);
-  Sable2.resize(48, 48);
-  Herbe1.resize(48, 48);
-  Herbe2.resize(48, 48);
+  img[0] = loadImage("data/01.png");
+  img[1] = loadImage("data/00.png");
+  img[2] = loadImage("data/13.png");
+  img[3] = loadImage("data/23.png");
+  img[4] = loadImage("data/21.png");
+  img[5] = loadImage("data/22.png");
+  img[6] = loadImage("data/11.png");
+  img[7] = loadImage("data/12.png");
 
-  sprite.add(Limite);
-  sprite.add(Vide);
-  sprite.add(Pierre);
-  sprite.add(PierreSable);
-  sprite.add(Sable1);
-  sprite.add(Sable2);
-  sprite.add(Herbe1);
-  sprite.add(Herbe2);
+  aff[0] = loadImage("data/01.png");
+  aff[1] = loadImage("data/00.png");
+  aff[2] = loadImage("data/13.png");
+  aff[3] = loadImage("data/23.png");
+  aff[4] = loadImage("data/21.png");
+  aff[5] = loadImage("data/22.png");
+  aff[6] = loadImage("data/11.png");
+  aff[7] = loadImage("data/12.png");
 
-  limite = new Bouton(posX, posY, 48, 48, Limite);
-  vide = new Bouton(posX+58, posY, 48, 48, Vide);
-  pierre = new Bouton(posX+116, posY, 48, 48, Pierre);
-  pierresable = new Bouton(posX+174, posY, 48, 48, PierreSable);
-  herbe1 = new Bouton(posX, posY+58, 48, 48, Herbe1);
-  herbe2 = new Bouton(posX+58, posY+58, 48, 48, Herbe2);
-  sable1 = new Bouton(posX+116, posY+58, 48, 48, Sable1);
-  sable2 = new Bouton(posX+174, posY+58, 48, 48, Sable2);
+  img[0].resize(48, 48);
+  img[1].resize(48, 48);
+  img[2].resize(48, 48);
+  img[3].resize(48, 48);
+  img[4].resize(48, 48);
+  img[5].resize(48, 48);
+  img[6].resize(48, 48);
+  img[7].resize(48, 48);
+
+  for (int i = 0; i < 8; i++) {
+    btn1[i] = new Bouton(posX, posY, 48, 48, img[i]);
+    posX += 58;
+  }
+  posX = 0;
+  posY = 32*3;
 }
 void draw() {
   background(255);
-  
-  limite.display();
-  vide.display();
-  pierre.display();
-  pierresable.display();
-  herbe1.display();
-  herbe2.display();
-  sable1.display();
-  sable2.display();
-  if (mousePressed) {
-    limite.collisions();
-    vide.collisions();
-    pierre.collisions();
-    pierresable.collisions();
-    herbe1.collisions();
-    herbe2.collisions();
-    sable1.collisions();
-    sable2.collisions();
+  for (int i = 0; i < 8; i++) {
+    btn1[i].display();
   }
+  for (int i = 0; i < colonnes; i++) {
+    for (int j = 0; j < lignes; j++) {
+      image(aff[image[i][j]], posX, posY);
+      posY += 32;
+    }
+    posY = 3*32;
+    posX += 32;
+  }
+  posX = 0;
+  posY = 32*3;
+
+  for (int i = 0; i < colonnes; i++) {
+    for (int j = 0; j < lignes; j++) {
+      strokeWeight(1);
+      line(lineX, lineY, lineX+32, lineY);
+      lineY += 32;
+    }   
+    lineX += 32;
+    lineY = 96;
+    line(lineX, lineY, lineX, lineY+704);
+  }
+  lineX = 0;
+  lineY = 96;
 }
+
+void mouseClicked() {
+  for (int i = 0; i < 8; i++) {
+    btn1[i].collisions(i);
+  }
+  for ( x = 0; x < colonnes; x++) {
+    for ( y = 0; y < lignes; y++) {
+      if (mouseX >= posX && mouseX <= posX+32 && mouseY >= posY && mouseY <= posY+32 && select != 8) {
+        image[x][y] = select;
+      }
+      posY += 32;
+    }
+    posY = 3*32;
+    posX += 32;
+  }
+  posX = 0;
+  posY = 32*3;
+}
+
+/*void sauvegarder_CSV(){
+ Table tableau= new Table();
+ int x;
+ int y;
+ for (x=0; x<largeur; x++) {
+ tableau.addColumn(str(x), Table.INT);
+ }
+ for (y=0; y<hauteur; y++) {
+ tableau.addRow();
+ for (x=0; x<largeur; x++) {
+ tableau.setInt(y, str(x), niveau[x][y]);
+ }
+ }
+ saveTable(tableau, "data/NouvMap.csv");
+ }*/

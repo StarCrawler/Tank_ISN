@@ -16,16 +16,17 @@ class Bouton {
     image(image, x, y);
     if(clic){
       strokeWeight(4);
-      strokeCap(ROUND);
       line(x,y,x+48,y);
       line(x+48,y,x+48,y+48);
       line(x+48,y+48,x,y+48);
       line(x,y+48,x,y);
+      strokeWeight(0);
     }
   }
-  void collisions() {
+  void collisions(int h) {
     if (mouseX>x && mouseX <x+sizeX && mouseY>y && mouseY <y+sizeY) {
       clic = true;
+      select = h;
     }else{
       clic = false;
     }
