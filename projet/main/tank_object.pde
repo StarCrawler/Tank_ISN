@@ -4,6 +4,7 @@ class Tank {
   int posXLife;
   int posYLife;
   int startPosX;
+  int playerNum;
   int life = 3;
   int taille = 32;
   int deplacementXr, deplacementXl;
@@ -11,27 +12,43 @@ class Tank {
   boolean collisionr = false, collisionl = false, collisionu = false, collisiond = false;
   int spritep = 4;
 
-  Tank (float newX, float newY, int newPosXLife, int newPosYLife) { //contructeur du tank
+  Tank (float newX, float newY, int newPosXLife, int newPosYLife, int newPlayerNum) { //contructeur du tank
     x = newX;
     y = newY;
     posXLife = newPosXLife;
     startPosX = newPosXLife;
     posYLife = newPosYLife;
+    playerNum = newPlayerNum;
   }
   void display() { // affichage du tank en fonction de son orientation
-    if (spritep == 1) {
-      image(moveU, x-1, y-1);
+    if (playerNum == 1) {
+      if (spritep == 1) {
+        image(moveU1, x-1, y-1);
+      }
+      if (spritep == 2) {
+        image(moveD1, x-1, y-1);
+      }
+      if (spritep == 3) {
+        image(moveL1, x-1, y-1);
+      }
+      if (spritep == 4) {
+        image(moveR1, x-1, y-1);
+      }
+    } else if (playerNum == 2) {
+      if (spritep == 1) {
+        image(moveU2, x-1, y-1);
+      }
+      if (spritep == 2) {
+        image(moveD2, x-1, y-1);
+      }
+      if (spritep == 3) {
+        image(moveL2, x-1, y-1);
+      }
+      if (spritep == 4) {
+        image(moveR2, x-1, y-1);
+      }
     }
-    if (spritep == 2) {
-      image(moveD, x-1, y-1);
-    }
-    if (spritep == 3) {
-      image(moveL, x-1, y-1);
-    }
-    if (spritep == 4) {
-      image(moveR, x-1, y-1);
-    }
-    for(int i = 0; i < life; i++){
+    for (int i = 0; i < life; i++) {
       image(lifeFull, posXLife, posYLife);
       posXLife += 34;
     }

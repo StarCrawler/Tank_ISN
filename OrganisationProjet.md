@@ -1,6 +1,6 @@
 Etape 1 : Définir map csv et l'afficher/Hugo(fait)/ + Définir les tanks (création objet + déplacements) et leur colisions/Riwan(fait)/
 
-Etape 2 : Définir le tir des tanks (second type d'objet + directions du tir)/Riwan(fait)/ + création des murs /Riwan(fait)/ + Créer le mode bac à sable avec csv/Hugo/
+Etape 2 : Définir le tir des tanks (second type d'objet + directions du tir)/Riwan(fait)/ + création des murs /Riwan(fait)/ + Créer le mode bac à sable avec csv/Hugo(fait)/
 
 Mise en commun : vérification des avancées et correction des éventuels bugs
 

@@ -3,16 +3,18 @@ void starting_game() {
   map1(); // création de la liste contenant les informations de sprite 
   
   //création des boites de collisions pour les murs en fonction de la valeur contenu dans les cases de la liste map1
-  for ( int i = 3; i < largeur; i++) {
+  for ( int i = 0; i < largeur; i++) {
     for ( int j = 0; j < hauteur; j++) {
       if (map1[i][j] == 1 || map1 [i][j] == 13) {
         mur1.add(new Mur(posX, posY)); //ajout du boite de collision pour un mur si la valeur de la case correspond
       }
-      posX = posX + 32;
+      posX += 32;
     }
-    posY = posY + 32;
     posX = 0;
+    posY += 32;
   }
+  posX = 0;
+  posY = 3*32;
 }
 
 void play() {

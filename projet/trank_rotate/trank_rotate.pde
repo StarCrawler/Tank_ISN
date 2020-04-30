@@ -7,7 +7,7 @@ void setup() {
   size(100, 100);
   background(255);
   counter=0.0;
-  tank=loadImage("tankPlayer1.png");
+  tank=loadImage("tankPlayer2.png");
   frameRate(5);
 }
 
