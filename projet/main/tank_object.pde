@@ -34,6 +34,18 @@ class Tank {
       if (spritep == 4) {
         image(moveR1, x-1, y-1);
       }
+      if (spritep == 5){
+        image(moveUR1, x-1, y-1);
+      }
+      if (spritep == 6){
+        image(moveUL1, x-1, y-1);
+      }
+      if (spritep == 7){
+        image(moveDR1, x-1, y-1);
+      }
+      if (spritep == 8){
+        image(moveDL1, x-1, y-1);
+      }
     } else if (playerNum == 2) {
       if (spritep == 1) {
         image(moveU2, x-1, y-1);

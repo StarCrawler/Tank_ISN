@@ -1,24 +1,48 @@
 //détection de la pression des touuches
 void keyPressed() {
   if (key == 'z') {
-    orientation1 = 1; // la variable change pour indiquer le changement d'orientation du tank
     tank1.deplacementYu = -1; // déplacement du tank modifié
-    tank1.spritep = 1; // change le sprite affiché pour correspondre à l'orientation du tank
+    if (tank1.deplacementXr == 1) {
+      tank1.spritep = 5;
+    } else if (tank1.deplacementXl == -1) {
+      tank1.spritep = 6;
+    } else {
+      orientation1 = 1; // la variable change pour indiquer le changement d'orientation du tank
+      tank1.spritep = 1; // change le sprite affiché pour correspondre à l'orientation du tank
+    }
   }
   if (key == 's') {
-    orientation1 = 2;
     tank1.deplacementYd = 1;
-    tank1.spritep = 2;
+    if (tank1.deplacementXr == 1) {
+      tank1.spritep = 7;
+    } else if (tank1.deplacementXl == -1) {
+      tank1.spritep = 8;
+    } else {  
+      orientation1 = 2;
+      tank1.spritep = 2;
+    }
   }
   if (key == 'q') {
-    orientation1 = 3;
     tank1.deplacementXl = -1;
-    tank1.spritep = 3;
+    if (tank1.deplacementYu == -1 && tank1.deplacementXr == 0) {
+      tank1.spritep = 6;
+    } else if(tank1.deplacementYd == 1 && tank1.deplacementXr == 0){
+      tank1.spritep = 8;
+    }else {
+      orientation1 = 3;
+      tank1.spritep = 3;
+    }
   }
   if (key == 'd') {
-    orientation1 = 4;
     tank1.deplacementXr = 1;
-    tank1.spritep = 4;
+    if (tank1.deplacementYu == -1 && tank1.deplacementXl == 0) {
+      tank1.spritep = 5;
+    } else if(tank1.deplacementYd == 1 && tank1.deplacementXl == 0){
+      tank1.spritep = 7;
+    }else {
+      orientation1 = 4;
+      tank1.spritep = 4;
+    }
   }
   if (key == 'e') {
     long nowpress = millis(); //récupération de la valeur du temps écoulé

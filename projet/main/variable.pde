@@ -18,7 +18,7 @@ long lastpress1, lastpress2; // variables de sauvegarde du temps pour le systèm
 int cooldown = 1500; // variable d'attente entre chaque tir
 
 //variable asset_load
-PImage moveL1, moveR1, moveU1, moveD1, moveL2, moveR2, moveU2, moveD2, tir, lifeFull; // variable des sprites du jeu
+PImage moveL1, moveR1, moveU1, moveD1, moveUR1, moveUL1, moveDR1, moveDL1, moveL2, moveR2, moveU2, moveD2, moveUR2, moveUL2, moveDR2, moveDL2, tir, lifeFull; // variable des sprites du jeu,
 
 //variable map
 Table tableau;
