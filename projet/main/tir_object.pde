@@ -25,6 +25,22 @@ class Tir {
     if (orientation == 4) {
       x = x+3;
     }
+    if (orientation == 5){
+      y = y-2;
+      x = x+2;
+    }
+    if(orientation == 6){
+      y = y-2;
+      x = x-2;
+    }
+    if(orientation == 7){
+      y = y+2;
+      x = x+2;
+    }
+    if(orientation == 8){
+      y = y+2;
+      x = x-2;
+    }
   }
 
   boolean terminate(float Xtank, float Ytank) { //destruction de la balle en fonction de ...
