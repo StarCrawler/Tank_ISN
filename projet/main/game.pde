@@ -87,3 +87,16 @@ void endGameEqual(){
   background(255);
   text("Match Nul", 512, 367);
 }
+
+void manche(){
+  background(255);
+  if(manche < mancheLimite && tank1.life != tank2.life){
+    if(tank1.life == 0){
+      text("Joueur 2 à gagné la manche " + str(manche),512,367 );
+    }else if (tank2.life == 0){
+      text("Joueur 1 à gagné la manche " +str(manche),512,367);
+      manche++;
+    }
+    
+  }
+}
