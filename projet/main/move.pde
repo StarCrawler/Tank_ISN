@@ -4,8 +4,10 @@ void keyPressed() {
     tank1.deplacementYu = -1; // déplacement du tank modifié
     if (tank1.deplacementXr == 1) {
       tank1.spritep = 5;
+      orientation1 = 5;
     } else if (tank1.deplacementXl == -1) {
       tank1.spritep = 6;
+      orientation1 = 6;
     } else {
       orientation1 = 1; // la variable change pour indiquer le changement d'orientation du tank
       tank1.spritep = 1; // change le sprite affiché pour correspondre à l'orientation du tank
@@ -15,8 +17,10 @@ void keyPressed() {
     tank1.deplacementYd = 1;
     if (tank1.deplacementXr == 1) {
       tank1.spritep = 7;
+      orientation1 = 7;
     } else if (tank1.deplacementXl == -1) {
       tank1.spritep = 8;
+      orientation1 = 8;
     } else {  
       orientation1 = 2;
       tank1.spritep = 2;
@@ -26,8 +30,10 @@ void keyPressed() {
     tank1.deplacementXl = -1;
     if (tank1.deplacementYu == -1 && tank1.deplacementXr == 0) {
       tank1.spritep = 6;
+      orientation1 = 6;
     } else if(tank1.deplacementYd == 1 && tank1.deplacementXr == 0){
       tank1.spritep = 8;
+      orientation1 = 8;
     }else {
       orientation1 = 3;
       tank1.spritep = 3;
@@ -37,14 +43,16 @@ void keyPressed() {
     tank1.deplacementXr = 1;
     if (tank1.deplacementYu == -1 && tank1.deplacementXl == 0) {
       tank1.spritep = 5;
+      orientation1 = 5;
     } else if(tank1.deplacementYd == 1 && tank1.deplacementXl == 0){
       tank1.spritep = 7;
+      orientation1 = 7;
     }else {
       orientation1 = 4;
       tank1.spritep = 4;
     }
   }
-  if (key == 'e') {
+  if (key == 'c') {
     long nowpress = millis(); //récupération de la valeur du temps écoulé
     //comparaison de temps pour déterminer si le cooldown est écoulé
     if (nowpress > (lastpress1 + cooldown)) {
@@ -54,23 +62,55 @@ void keyPressed() {
   }
   if (keyCode == UP) {
     tank2.deplacementYu = -1;
-    tank2.spritep = 1;
-    orientation2 = 1;
+    if (tank2.deplacementXr == 1) {
+      tank2.spritep = 5;
+      orientation2 = 5;
+    } else if (tank2.deplacementXl == -1) {
+      tank2.spritep = 6;
+      orientation2 = 6;
+    } else {
+      orientation2 = 1; // la variable change pour indiquer le changement d'orientation du tank
+      tank2.spritep = 1; // change le sprite affiché pour correspondre à l'orientation du tank
+    }
   }
   if (keyCode == DOWN) {
     tank2.deplacementYd = 1;
-    tank2.spritep = 2;
-    orientation2 = 2;
+    if (tank2.deplacementXr == 1) {
+      tank2.spritep = 7;
+      orientation2 = 7;
+    } else if (tank2.deplacementXl == -1) {
+      tank2.spritep = 8;
+      orientation2 = 8;
+    } else {  
+      orientation2 = 2;
+      tank2.spritep = 2;
+    }
   }
   if (keyCode == LEFT) {
     tank2.deplacementXl = -1;
-    tank2.spritep = 3;
-    orientation2 = 3;
+    if (tank2.deplacementYu == -1 && tank2.deplacementXr == 0) {
+      tank2.spritep = 6;
+      orientation2 = 6;
+    } else if(tank2.deplacementYd == 1 && tank2.deplacementXr == 0){
+      tank2.spritep = 8;
+      orientation2 = 8;
+    }else {
+      orientation2 = 3;
+      tank2.spritep = 3;
+    }
   }
   if (keyCode == RIGHT) {
     tank2.deplacementXr = 1;
-    tank2.spritep = 4;
-    orientation2 = 4;
+    if (tank2.deplacementYu == -1 && tank2.deplacementXl == 0) {
+      tank2.spritep = 5;
+      orientation2 = 5;
+    } else if(tank2.deplacementYd == 1 && tank2.deplacementXl == 0){
+      tank2.spritep = 7;
+      orientation2 = 7;
+    }else {
+      orientation2 = 4;
+      tank2.spritep = 4;
+    }
   }
   if (keyCode == ENTER) {
     long nowpress = millis();

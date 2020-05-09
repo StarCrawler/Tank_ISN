@@ -59,6 +59,18 @@ class Tank {
       if (spritep == 4) {
         image(moveR2, x-1, y-1);
       }
+      if (spritep == 5){
+        image(moveUR2, x-1, y-1);
+      }
+      if (spritep == 6){
+        image(moveUL2, x-1, y-1);
+      }
+      if (spritep == 7){
+        image(moveDR2, x-1, y-1);
+      }
+      if (spritep == 8){
+        image(moveDL2, x-1, y-1);
+      }
     }
     for (int i = 0; i < life; i++) {
       image(lifeFull, posXLife, posYLife);
