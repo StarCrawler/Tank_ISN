@@ -2,7 +2,7 @@
 Tank tank1 = new Tank(65, 257,10,10,1); // création du tank du premier joueur
 Tank tank2 = new Tank(200, 200,914,10,2); // création du tank du deuxième joueur
 
-Bouton next = new Bouton(
+//Bouton next = new Bouton(
 
 ArrayList<Mur> mur1 = new ArrayList<Mur>(); // création du tableau modulaire des murs
 
